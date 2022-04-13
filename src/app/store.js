@@ -1,8 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { applyMiddleware, combineReducers, createStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import { imageReducer, imagesReducer } from '../redux/images';
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
+const rootReducer = combineReducers(
+  {
+    imagesReducer,
+    imageReducer,
   },
-});
+);
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+export default store;

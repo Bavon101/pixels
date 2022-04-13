@@ -1,0 +1,30 @@
+.image-tags,
+.image-tags-con {
+  z-index: 1;
+  position: absolute;
+  right: 10px;
+  top: 150px;
+  color: aliceblue;
+  text-align: end;
+}
+
+.image-tags-con {
+  top: 50px;
+}
+
+.filiter-card {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: aliceblue;
+}
+
+.filter-label {
+  margin: 0;
+  text-align: left;
+  margin-left: 5px;
+  color: aliceblue;
+}
