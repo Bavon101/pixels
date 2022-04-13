@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { fetchSingleImage } from '../api/data_fetch';
 import DetailsCard from '../components/DetailsCard';
+import Loading from '../components/Loading';
 import NavgationBar from '../components/NavgationBar';
 import './styles.css';
 
@@ -18,13 +19,13 @@ export default function DetailsPage() {
   if (image.image == null) {
     return (
       <div>
-        Fetching...
+        <Loading />
       </div>
     );
   }
   return (
     <div>
-      <NavgationBar title="Details " goBack />
+      <NavgationBar title="Pixel Data " goBack />
       <div style={{ marginTop: '63px', borderRadius: '0' }}>
         <div className="image-tags">
           <h4>
@@ -34,7 +35,7 @@ export default function DetailsPage() {
           </h4>
           <h5>
             {
-              `${image.image.likes} likes`
+              `${image.image.likes.toLocaleString()} likes`
             }
           </h5>
         </div>
@@ -43,15 +44,15 @@ export default function DetailsPage() {
             component="img"
             height="194"
             image={image.image.webformatURL}
-            alt="Paella dish"
+            alt={image.image.tags}
           />
         </Card>
       </div>
-      <DetailsCard title="Views" value={`${image.image.views} `} />
-      <DetailsCard title="Downloads" value={`${image.image.downloads} `} light />
-      <DetailsCard title="Collections" value={`${image.image.collections} `} />
-      <DetailsCard title="Comments" value={`${image.image.comments} `} light />
-      <DetailsCard title="Likes" value={`${image.image.likes} `} />
+      <DetailsCard title="Views" value={`${image.image.views.toLocaleString()} `} icon="visibility" />
+      <DetailsCard title="Downloads" value={`${image.image.downloads.toLocaleString()} `} light icon="file_download" />
+      <DetailsCard title="Collections" value={`${image.image.collections.toLocaleString()} `} icon="collections" />
+      <DetailsCard title="Comments" value={`${image.image.comments.toLocaleString()} `} light icon="chat_bubble" />
+      <DetailsCard title="Likes" value={`${image.image.likes.toLocaleString()} `} icon="mood" />
     </div>
   );
 }

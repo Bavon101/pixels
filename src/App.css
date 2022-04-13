@@ -5,3 +5,27 @@
 body {
   background-color: #3f62a6;
 }
+
+.loader,
+.mini-loader {
+  border: 5px solid #fafafa;
+  border-top: 5px solid #4386bf;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  justify-self: center;
+  animation: spin 0.5s linear infinite;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.mini-loader {
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
