@@ -1,0 +1,8 @@
+.card {
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+    align-content: space-between;
+	justify-content: space-between;
+	color: aliceblue;
+}
