@@ -48,11 +48,11 @@ export default function DetailsPage() {
           />
         </Card>
       </div>
-      <DetailsCard title="Views" value={`${image.image.views.toLocaleString()} `} icon="visibility" />
+      <DetailsCard title="Views" value={`${image.image.views.toLocaleString()} `} icon="visibility" light={false} />
       <DetailsCard title="Downloads" value={`${image.image.downloads.toLocaleString()} `} light icon="file_download" />
-      <DetailsCard title="Collections" value={`${image.image.collections.toLocaleString()} `} icon="collections" />
+      <DetailsCard title="Collections" value={`${image.image.collections.toLocaleString()} `} icon="collections" light={false} />
       <DetailsCard title="Comments" value={`${image.image.comments.toLocaleString()} `} light icon="chat_bubble" />
-      <DetailsCard title="Likes" value={`${image.image.likes.toLocaleString()} `} icon="mood" />
+      <DetailsCard title="Likes" value={`${image.image.likes.toLocaleString()} `} icon="mood" light={false} />
     </div>
   );
 }

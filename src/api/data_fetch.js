@@ -1,4 +1,5 @@
 import {
+  clearImage,
   fetchDataBegin, fetchDataFailure,
   fetchDataSuccess, imageFetchSuccess,
 } from './data_fetch_statuses';
@@ -14,7 +15,7 @@ function handleErrors(response) {
 export default function fetchImages() {
   return (dispatch) => {
     dispatch(fetchDataBegin());
-    return fetch('https://pixabay.com/api/?key=12918753-88ae9b08d6ddff4b548ea3571&q=art+blue&image_type=photo&pretty=true&per_page=100', {
+    return fetch('https://pixabay.com/api/?key=12918753-88ae9b08d6ddff4b548ea3571&q=art+blue&image_type=photo&pretty=true&per_page=200', {
       method: 'GET',
     })
       .then(handleErrors)
@@ -29,6 +30,7 @@ export default function fetchImages() {
 
 export function fetchSingleImage(id) {
   return (dispatch) => {
+    dispatch(clearImage());
     dispatch(fetchDataBegin());
     return fetch(`https://pixabay.com/api/?key=12918753-88ae9b08d6ddff4b548ea3571&id=${id}&image_type=photo&pretty=true`, {
       method: 'GET',
