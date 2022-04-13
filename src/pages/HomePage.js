@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import fetchImages from '../api/data_fetch';
 import '../components/image/image_card.css';
 import NavgationBar from '../components/NavgationBar';
+import Loading from '../components/Loading';
 
 export default function HomePage() {
   const imagesData = useSelector((state) => state.imagesReducer);
@@ -20,7 +21,7 @@ export default function HomePage() {
   if (imagesData.images.length === 0) {
     return (
       <div>
-        loading
+        <Loading />
       </div>
     );
   }
@@ -49,7 +50,7 @@ export default function HomePage() {
                 <div className="info-conatiner">
                   <FavoriteIcon sx={{ color: 'white' }} />
                   <h6>
-                    {image.likes}
+                    {image.likes.toLocaleString()}
                   </h6>
                 </div>
               )}
