@@ -1,13 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-export default function Loading(props) {
-  const { mini } = props;
+export default function Loading() {
   return (
-    <div className={mini ? 'mini-loader' : 'loader'} />
+    <div className="loader" />
   );
 }
-
-Loading.propTypes = {
-  mini: PropTypes.bool.isRequired,
-};
