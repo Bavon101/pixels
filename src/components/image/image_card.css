@@ -1,18 +1,18 @@
 .arrow-btn {
-	position: absolute !important;
-	z-index: 1;
-	right: 5px;
+  position: absolute !important;
+  z-index: 1;
+  right: 5px;
 }
 
-.info-conatiner{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 5px;
-	padding-right: 5px;
+.info-conatiner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding-right: 5px;
 }
 
-h6{
-	margin: 0;
-	color: white;
+h6 {
+  margin: 0;
+  color: white;
 }
