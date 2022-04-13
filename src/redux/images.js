@@ -20,7 +20,7 @@ export function imagesReducer(state = {
         ...state,
         loading: false,
         images: [
-          ...action.payload,
+          ...action.payload.hits.sort((a, b) => b.likes - a.likes),
         ],
       };
     case FETCH_DATA_FAILURE:
