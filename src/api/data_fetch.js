@@ -14,11 +14,8 @@ function handleErrors(response) {
 export default function fetchImages() {
   return (dispatch) => {
     dispatch(fetchDataBegin());
-    return fetch('https://pixabay.com/api/?key=12918753-88ae9b08d6ddff4b548ea3571&q=anime&image_type=photo&pretty=true', {
+    return fetch('https://pixabay.com/api/?key=12918753-88ae9b08d6ddff4b548ea3571&q=art+blue&image_type=photo&pretty=true&per_page=100', {
       method: 'GET',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
     })
       .then(handleErrors)
       .then((res) => res.json())
@@ -35,9 +32,6 @@ export function fetchSingleImage(id) {
     dispatch(fetchDataBegin());
     return fetch(`https://pixabay.com/api/?key=12918753-88ae9b08d6ddff4b548ea3571&id=${id}&image_type=photo&pretty=true`, {
       method: 'GET',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
     })
       .then(handleErrors)
       .then((res) => res.json())
