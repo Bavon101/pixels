@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './App';
 import store from './app/store';
 import * as serviceWorker from './serviceWorker';
@@ -11,11 +12,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <Provider store={store}>
+    <Provider store={store}>
+      <React.StrictMode>
         <App />
-      </Provider>
-    </React.StrictMode>
+      </React.StrictMode>
+    </Provider>
   </BrowserRouter>,
 );
 
