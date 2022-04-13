@@ -18,7 +18,6 @@
  </table>
 
 A simple web app to show trending photos from [Pixabay](https://pixabay.com/api/docs/), based on likes.
-Original design idea by[ Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
 
 ## Built With
 
@@ -70,6 +69,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
+- Original design idea by[ Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
 
 ## 📝 License
 
