@@ -1,4 +1,7 @@
-import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
+import {
+  ImageList, ImageListItem,
+  ImageListItemBar, Card, CardMedia,
+} from '@mui/material';
 import React, { useEffect } from 'react';
 import ArrowCircleDownRoundedIcon from '@mui/icons-material/ArrowCircleDownRounded';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -28,7 +31,29 @@ export default function HomePage() {
   return (
     <div className="home">
       <NavgationBar />
-      <ImageList variant="masonry" cols={2} gap={8} sx={{ marginTop: '65px' }}>
+      <div style={{ marginTop: '63px', borderRadius: '0' }}>
+        <div className="image-tags">
+          <h4>
+            {
+              imagesData.images[0].tags.toUpperCase()
+            }
+          </h4>
+          <h5>
+            {
+              `${imagesData.images[0].likes.toLocaleString()} likes`
+            }
+          </h5>
+        </div>
+        <Card component={Link} to={`./details?id=${imagesData.images[0].id}`}>
+          <CardMedia
+            component="img"
+            height="194"
+            image={imagesData.images[0].webformatURL}
+            alt={imagesData.images[0].tags}
+          />
+        </Card>
+      </div>
+      <ImageList variant="masonry" cols={2} gap={8} sx={{ marginTop: '5px' }}>
         {imagesData.images.map((image) => (
           <ImageListItem component={Link} to={`./details?id=${image.id}`} key={image.id}>
             <ArrowCircleDownRoundedIcon sx={{ color: 'white' }} className="arrow-btn" style={{ transform: 'rotate(-90deg)' }} />
