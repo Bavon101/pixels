@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Details card 1`] = `
+<div
+  className="card"
+  style={
+    Object {
+      "backgroundColor": "#4167AF",
+    }
+  }
+>
+  <h3>
+    Views
+  </h3>
+  <div
+    className="value-icon"
+  >
+    <h4>
+      20
+    </h4>
+    <i
+      className="material-icons"
+    >
+      file_download
+    </i>
+  </div>
+</div>
+`;
+
+exports[`Render HomePage 1`] = `
+<div>
+  <div
+    className="loader"
+  />
+</div>
+`;
